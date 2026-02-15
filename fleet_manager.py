@@ -93,6 +93,21 @@ def search_crew(names, ranks, divs, ids):
     if found == False:
         print("No matches")
 
+def filter_by_division(names, divs):
+    print("Filter by division")
+    target_div = input("Enter division: ")
+    
+    print("Members in", target_div)
+    found = False
+    
+    for x in range(len(names)):
+        if divs[x] == target_div:
+             print(names[x])
+             found = True
+             
+    if found == False:
+        print("No members found in this division")
+
 def main():
     names, ranks, divs, ids = init_database() 
 
@@ -113,6 +128,8 @@ def main():
             update_rank(names, ranks, ids)
         elif menu == "5":
             search_crew(names, ranks, divs, ids)
+        elif menu == "6":
+            filter_by_division(names, divs)
         else:
             print ("invalid option")
 main()
