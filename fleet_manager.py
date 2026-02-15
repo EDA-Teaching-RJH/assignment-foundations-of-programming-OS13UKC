@@ -59,12 +59,26 @@ def remove_member(names, ranks, divs, ids):
 
 def display_members(names, ranks, divs, ids):
     print("Display members")
-    # Simple table header
     print("ID", "Name", "Rank", "Division")
     
-    # Loop through the list to show everyone
     for x in range(len(names)):
         print(ids[x], names[x], ranks[x], divs[x])
+
+def update_rank(names, ranks, ids):
+    print("Update ranks")
+    target_id = input("Enter ID to update: ")
+    
+    if target_id in ids:
+        index = ids.index(target_id)
+        
+        print("Current rank for", names[index], "is", ranks[index])
+        
+        new_rank = input("Enter new rank: ")
+        
+        ranks[index] = new_rank
+        print("Rank updated")
+    else:
+        print("ID not found")
 
 def main():
     names, ranks, divs, ids = init_database() 
@@ -82,6 +96,8 @@ def main():
             add_member(names, ranks, divs, ids)
         elif menu == "3":
             remove_member(names, ranks, divs, ids)
+        elif menu == "4":
+            update_rank(names, ranks, ids)
         else:
             print ("invalid option")
 main()
