@@ -57,6 +57,15 @@ def remove_member(names, ranks, divs, ids):
     else:
         print("ID not found")
 
+def display_members(names, ranks, divs, ids):
+    print("Display members")
+    # Simple table header
+    print("ID", "Name", "Rank", "Division")
+    
+    # Loop through the list to show everyone
+    for x in range(len(names)):
+        print(ids[x], names[x], ranks[x], divs[x])
+
 def main():
     names, ranks, divs, ids = init_database() 
 
@@ -67,6 +76,8 @@ def main():
 
         if menu == ("9"):
             break
+        elif menu == "1":
+            display_members(names, ranks, divs, ids)
         elif menu == "2":
             add_member(names, ranks, divs, ids)
         elif menu == "3":
