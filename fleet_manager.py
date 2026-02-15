@@ -80,6 +80,19 @@ def update_rank(names, ranks, ids):
     else:
         print("ID not found")
 
+def search_crew(names, ranks, divs, ids):
+    print("Search crew")
+    term = input("Enter search term: ")
+
+    found = False
+    for x in range(len(names)):
+        if term in names[x]:
+            print(ids[x], names[x], ranks[x], divs[x])
+            found = True
+
+    if found == False:
+        print("No matches")
+
 def main():
     names, ranks, divs, ids = init_database() 
 
@@ -98,6 +111,8 @@ def main():
             remove_member(names, ranks, divs, ids)
         elif menu == "4":
             update_rank(names, ranks, ids)
+        elif menu == "5":
+            search_crew(names, ranks, divs, ids)
         else:
             print ("invalid option")
 main()
