@@ -42,6 +42,21 @@ def add_member(names, ranks, divs, ids):
     divs.append(new_div)
     print ("Crew member", new_name ,"added")
 
+def remove_member(names, ranks, divs, ids):
+    print("Remove member")
+    target_id = input("Enter ID to remove: ")
+    
+    if target_id in ids:
+        index = ids.index(target_id)
+        
+        names.pop(index)
+        ranks.pop(index)
+        divs.pop(index)
+        ids.pop(index)
+        print("Crew member removed")
+    else:
+        print("ID not found")
+
 def main():
     names, ranks, divs, ids = init_database() 
 
@@ -54,6 +69,8 @@ def main():
             break
         elif menu == "2":
             add_member(names, ranks, divs, ids)
+        elif menu == "3":
+            remove_member(names, ranks, divs, ids)
         else:
             print ("invalid option")
 main()
