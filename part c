@@ -1,0 +1,15 @@
+1. added equals at "if opt = "1"" because = is assign wheras we want == which is compare
+2. added brackets and colon on run_system_monolith as function definitions need brackets and a colon
+3. brackets added for print "text" as brackets are required for print statements
+4. using range (5) instead of range(len(n)) caused a crash if the list was shorter than 5
+5. option 2 added a Name but forgot to add Rank and Division using append
+6. the loading variable never increased, so while loading < 5 ran forever fixed using loading + 1
+7. option 3 tried to .remove() a name without checking if name in list first fixed by checking if item was in list
+8. logic and type error 2 in 1 print("Loading " + loading) crashes because loading is a number and rank == 
+9. while loading < 5 loop served no real purpose so it was deleted
+10. indentation error print("System Check OK") and if len(n) > 0 were indented randomly and there was a useless statement where 10 is always greater than 5 so it provides no purpose
+        x = 10
+        if x > 5:
+            print("System Check OK")
+        else:
+            print("System Failure") 
