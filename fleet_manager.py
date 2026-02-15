@@ -108,6 +108,32 @@ def filter_by_division(names, divs):
     if found == False:
         print("No members found in this division")
 
+def calculate_payroll(ranks):
+    total = 0
+    for rank in ranks:
+        if rank == "rank1" or rank == "Rank1":
+            total = total + 1000
+        elif rank == "rank2" or rank == "Rank2":
+            total = total + 800
+        elif rank == "rank3" or rank == "Rank3":
+            total = total + 600
+        elif rank == "rank4" or rank == "Rank4":
+            total = total + 400
+        elif rank == "rank5" or rank == "Rank5":
+            total = total + 200
+        else:
+            total = total + 100
+            
+    print("Total payroll cost:", total)
+
+def count_officers(ranks):
+    count = 0
+    for rank in ranks:
+        if rank == "rank1" or rank == "Rank1" or rank == "rank2" or rank == "Rank2":
+            count = count + 1
+    
+    print("High ranking officers:", count)
+
 def main():
     names, ranks, divs, ids = init_database() 
 
@@ -130,6 +156,10 @@ def main():
             search_crew(names, ranks, divs, ids)
         elif menu == "6":
             filter_by_division(names, divs)
+        elif menu == "7":
+            calculate_payroll(ranks)
+        elif menu == "8":
+            count_officers(ranks)
         else:
             print ("invalid option")
 main()
